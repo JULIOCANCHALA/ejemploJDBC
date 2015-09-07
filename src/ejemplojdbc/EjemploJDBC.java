@@ -61,14 +61,21 @@ public class EjemploJDBC {
             
             //Ingresar contacto
             System.out.println("Digite el nombre: ");
-            String nombres=teclado.nextLine();
+            nombre=teclado.nextLine();
             System.out.println("Digite el apellido: ");
             String apellido=teclado.nextLine();
             System.out.println("Digite el telefono: ");
             String telefono=teclado.nextLine();
-            estado.executeUpdate("INSERT INTO `clientes` VALUES (NULL, '"+nombres+"', '"+apellido+"', '"+telefono+"')");
+            estado.executeUpdate("INSERT INTO `clientes` VALUES (NULL, '"+nombre+"', '"+apellido+"', '"+telefono+"')");
             
             System.out.println("Cliente Agregado con exito");
+            
+            //Borrar  contacto
+            System.out.println("Digite el nombre: ");
+            nombre=teclado.nextLine();
+            
+            estado.executeUpdate("DELETE FROM `clientes` WHERE `nombre` LIKE '"+nombre+"'");
+            
             
         } catch (SQLException ex) {//error en la sintaxis de mysql
             System.out.println("Error de mysql");
