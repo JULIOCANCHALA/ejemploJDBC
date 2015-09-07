@@ -24,16 +24,16 @@ public class EjemploJDBC {
             System.out.println("Intentando conectar a la base de datos..");
             Class.forName("com.mysql.jdbc.Driver");            
             
-           // Connection con=DriverManager.getConnection("jdbc:mysql://localhost/contactos",user,pasword);
-            Connection con=DriverManager.getConnection("jdbc:mysql://db4free.net/contactosjc",user2,pasword2);//para internet
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/contactos",user,pasword);
+            //Connection con=DriverManager.getConnection("jdbc:mysql://db4free.net/contactosjc",user2,pasword2);//para internet
             
             
             System.out.println("Conexion exitosa...");
             
-        } catch (SQLException ex) {
+        } catch (SQLException ex) {//error en la sintaxis de mysql
             System.out.println("Error de mysql");
         }
-         catch (Exception e) {
+         catch (Exception e) {//cualquier otro error
             System.out.println("Se ha encontrado un error: "+ e.getMessage());
         }
         
